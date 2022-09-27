@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int C = 0;
+	int n, m;
+	int f_s[100];
+	cin >> C;
+	for (int i = 0; i < C; i++) {
+		cin >> n;
+		cin >> m;
+		if (n % (m + 1) == 0)
+			f_s[i] = 1;//second
+		else
+			f_s[i] = 0;
+	}
+	for (int i = 0; i < C; i++) {
+		if (f_s[i] == 0)
+			cout << "first" << endl;
+		else
+			cout << "second" << endl;
+	}
+	return 0;
+}
+/*
+小鱼和可乐在玩回合制游戏，小鱼作为游戏先手。游戏规则：群里现在有n本书，每轮一个人取走不超过m本书。换句话说每次可以选一个数x（x<=m)，使得数字n = n - x。当书被取完时，操作者获胜。现在给你一个n，一个m。问小鱼赢还是可乐赢（假设小鱼和可乐都极顶聪明）
+Input
+输入数据首先包含一个正整数C(C<=100)，表示有C组测试数据。
+每组测试数据占一行，包含两个整数n和m（1<=n,m<=1000），n和m的含义见题目描述。
+Output
+如果先手(小鱼)的人能赢，请输出“first”，否则请输出“second”，每个实例的输出占一行。
+*/
